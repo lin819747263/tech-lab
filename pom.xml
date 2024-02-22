@@ -7,6 +7,11 @@
         <module>es</module>
         <module>es-high-client</module>
         <module>rkmq</module>
+        <module>flink</module>
+        <module>spark</module>
+        <module>netty</module>
+        <module>netty/netty-client</module>
+        <module>netty/netty-server</module>
     </modules>
 
     <groupId>com.kehua</groupId>
@@ -71,12 +76,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <!--解决奇怪报错问题-->
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.23.1-GA</version>
         </dependency>
     </dependencies>
 

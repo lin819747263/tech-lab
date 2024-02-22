@@ -17,6 +17,8 @@ import java.util.Collections;
 public class Receiver implements InitializingBean {
 
     public void receive() throws ClientException, InterruptedException {
+
+
         final ClientServiceProvider provider = ClientServiceProvider.loadService();
         // 接入点地址，需要设置成Proxy的地址和端口列表，一般是xxx:8081;xxx:8081。
         String endpoints = "192.168.68.252:8081";
