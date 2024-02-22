@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    bootstrap-servers: 192.168.68.118:9092,192.168.68.118:9093,192.168.68.118:9094
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      max-poll-records:
