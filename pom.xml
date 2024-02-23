@@ -12,6 +12,7 @@
         <module>netty</module>
         <module>netty/netty-client</module>
         <module>netty/netty-server</module>
+        <module>mongDB</module>
     </modules>
 
     <groupId>com.kehua</groupId>
