@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Accessors(chain = true)
-@Document(collation = "test")
+@Document(collection = "test")
 public class Comment {
     @Id
     private String id;

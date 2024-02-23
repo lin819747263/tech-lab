@@ -36,4 +36,9 @@ public class CommentController {
     public void query(){
         commentService.query();
     }
+
+    @GetMapping("query1")
+    public void query1(){
+        commentService.query1();
+    }
 }

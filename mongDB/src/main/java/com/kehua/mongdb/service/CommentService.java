@@ -7,10 +7,13 @@ import com.kehua.mongdb.DataProvider;
 import com.kehua.mongdb.dao.CommentDao;
 import com.kehua.mongdb.entity.Comment;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CommentService {
@@ -26,7 +29,7 @@ public class CommentService {
 
         Comment comment = new Comment();
 
-        comment.setId("e00000001");
+//        comment.setId("e00000001");
         comment.setCommentBlog("dsafsdfsd");
         comment.setCommentGood(88);
         comment.setCommentUser(66);
@@ -70,7 +73,20 @@ public class CommentService {
 
 
     public void query(){
-        List<Comment> comments =  commentDao.findAll();
+        Optional<Comment> comments =  commentDao.findById("e00000001");
+        comments.ifPresent(System.out::println);
+    }
+
+    public void query1(){
+
+        Comment comment = new Comment();
+
+//        comment.setId("e00000001");
+        comment.setCommentBlog("dsafsdfsd");
+
+        Example<Comment> example = Example.of(comment);
+        ExampleMatcher matcher = ExampleMatcher.matchingAny();
+        List<Comment> comments =  commentDao.findAll(example);
         comments.forEach(System.out::println);
     }
 
